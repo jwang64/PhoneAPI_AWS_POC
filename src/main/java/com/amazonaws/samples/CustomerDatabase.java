@@ -1,6 +1,7 @@
 package com.amazonaws.samples;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
@@ -9,15 +10,19 @@ import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 
 public class CustomerDatabase {
 	 public static void main(String[] args) {
-		 
+		 /*
 	        AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
 	        		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
 	        		.build();
+	        		*/
+		 	AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
+		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
+				.build();  
 
 	        DynamoDBMapper mapper = new DynamoDBMapper(client);
-	        CreateTableRequest req = mapper.generateCreateTableRequest(Customer.class);
-	        req.setProvisionedThroughput(new ProvisionedThroughput(5L, 5L));
-	        client.createTable(req);
+	       // CreateTableRequest req = mapper.generateCreateTableRequest(Customer.class);
+	       // req.setProvisionedThroughput(new ProvisionedThroughput(5L, 5L));
+	       // client.createTable(req);
 	        
 	        Customer keySchema = new Customer();
 	        keySchema.setLastName("Sheuuu");
