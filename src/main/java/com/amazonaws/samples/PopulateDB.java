@@ -14,8 +14,8 @@ public class PopulateDB {
 	public static void main(String args[]) {
 		
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-        		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:8000", "us-west-2"))
-        		.build();
+		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
+				.build();  
 		 DynamoDBMapper mapper = new DynamoDBMapper(client);
 	      
 	        //CreateTableRequest req = mapper.generateCreateTableRequest(Customer.class);
@@ -44,30 +44,6 @@ public class PopulateDB {
 	        String randomEmail = randGen.randomIdentifier() + randGen.randomEmailDomain();
 	        keySchema.setEmail(randomEmail);
 	        mapper.save(keySchema);
-			
-			
-	      /*try {
-	            Customer result = mapper.load(keySchema);
-	            if (result != null) {
-	                System.out.println(
-	                "The customer's name is: " + result.getFirstName() +
-	                "\nThe customer's phone number is: " + result.getPhoneNumber() +
-	                "\nThe customer's phone company is: " + result.getPhoneCompany() +
-	                "\nThe customer's account number is: " + result.getAccountNumber() +
-	                "\nThe customer's address  is: " + result.getAddress() +
-	                "\nThe customer's address  is: " + result.getZipCode() +
-	                "\nThe customer's SSN  is: " + result.getSSN() +
-	                "\nThe customer's email  is: " + result.getEmail()+
-	                "\n "
-	                		);
-	            } else {
-	                System.out.println("Empty Database");
-	            }
-	        } catch (Exception e) {
-	            System.err.println("Unable to retrieve data: ");
-	            System.err.println(e.getMessage());
-	        }
-		}*/
 	} 
 		
 

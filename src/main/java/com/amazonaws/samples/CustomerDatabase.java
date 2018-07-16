@@ -1,3 +1,4 @@
+@@ -1,56 +0,0 @@
 package com.amazonaws.samples;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
