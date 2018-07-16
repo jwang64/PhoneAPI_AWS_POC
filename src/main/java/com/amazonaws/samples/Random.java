@@ -3,7 +3,9 @@ package com.amazonaws.samples;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/*
+ * The random generator. It has the sets of information that's used as the basis for the generated data.
+ */
 public class Random {
 
 	final String lexicon = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

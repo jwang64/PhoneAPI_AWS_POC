@@ -12,20 +12,20 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 	
     @Override
     public Response handleRequest(Request input, Context context) {
-    	
+    	// Connects with AWS
     	AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
 		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
 				.build();  
 
 	    DynamoDBMapper mapper = new DynamoDBMapper(client);
-    	
-		String firstName = input.getFirstName();
+    	// Assigns the request components to variables that will be manipulated
+		String firstName = input.getFirstName();	
 		String lastName = input.getLastName();
 		String phoneNumber = input.getPhoneNumber();
 		String phoneCompany = input.getPhoneCompany();
-		
+		//Checks the last name and phone number to see whether customer exists in the current system
 		Customer temp = mapper.load(Customer.class, lastName, phoneNumber);
-		
+		//Response being sent to user
     	String output = "Hello, " + firstName + " " + temp.getLastName()
   			  +" Your phone number is : " + temp.getPhoneNumber();
     	if(!phoneCompany.equals(temp.getPhoneCompany()))

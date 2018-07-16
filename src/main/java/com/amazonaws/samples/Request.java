@@ -1,5 +1,8 @@
 package com.amazonaws.samples;
 
+/*
+ * Request object format that is sent in from Lambda
+ */
 public class Request {
     String firstName;
     String lastName;
