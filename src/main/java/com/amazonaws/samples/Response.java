@@ -1,6 +1,8 @@
 package com.amazonaws.samples;
 
-
+/*
+ * Formatting for the response that will be given
+ */
 public class Response {
 	String response;
 	

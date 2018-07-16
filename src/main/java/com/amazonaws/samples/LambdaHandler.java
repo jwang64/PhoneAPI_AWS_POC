@@ -19,14 +19,11 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 
 	    DynamoDBMapper mapper = new DynamoDBMapper(client);
     	
-        String firstName = "";
-		String lastName = "";
-		String phoneNumber = "";
-		String phoneCompany = "";
-		firstName = input.getFirstName();
-		lastName = input.getLastName();
-		phoneNumber = input.getPhoneNumber();
-		phoneCompany = input.getPhoneCompany();
+		String firstName = input.getFirstName();
+		String lastName = input.getLastName();
+		String phoneNumber = input.getPhoneNumber();
+		String phoneCompany = input.getPhoneCompany();
+		
 		Customer temp = mapper.load(Customer.class, lastName, phoneNumber);
 		
     	String output = "Hello, " + firstName + " " + temp.getLastName()

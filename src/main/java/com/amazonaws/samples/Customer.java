@@ -5,6 +5,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
+/*
+ * Customer class. Holds information about the customer: name, phone number, company, account number, zipcode, ssn, email
+ */
 @DynamoDBTable(tableName="TestTable")
 public class Customer {
 	private String phoneCompany;
