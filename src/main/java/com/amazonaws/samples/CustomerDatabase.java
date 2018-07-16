@@ -23,7 +23,8 @@ public class CustomerDatabase {
 	       // CreateTableRequest req = mapper.generateCreateTableRequest(Customer.class);
 	       // req.setProvisionedThroughput(new ProvisionedThroughput(5L, 5L));
 	       // client.createTable(req);
-	        
+	
+	        /*
 	        Customer keySchema = new Customer();
 	        keySchema.setLastName("Sheuuu");
 	        keySchema.setPhoneNumber("123-456-7890");
@@ -50,7 +51,7 @@ public class CustomerDatabase {
 	        } catch (Exception e) {
 	            System.err.println("Unable to retrieve data: ");
 	            System.err.println(e.getMessage());
-	        }
+	        } */
 }
 	 
 }

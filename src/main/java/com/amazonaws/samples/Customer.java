@@ -10,7 +10,7 @@ public class Customer {
 	private String phoneCompany;
 	private String phoneNumber;
 	private String firstName;
-	private String lastName;
+	public String lastName;
 	private String accountNumber;
 	private String address;
 	private String zipCode;
