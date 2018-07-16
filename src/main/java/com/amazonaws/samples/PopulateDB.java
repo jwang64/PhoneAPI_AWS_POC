@@ -9,12 +9,13 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.client.builder.AwsClientBuilder;
+import com.amazonaws.samples.*;
 
 public class PopulateDB {
 	public static void main(String args[]) {
 		
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
+				.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
 				.build();  
 		 DynamoDBMapper mapper = new DynamoDBMapper(client);
 	      
@@ -29,8 +30,7 @@ public class PopulateDB {
 		
 	        Customer keySchema = new Customer();
 	        Random randGen = new Random();
-	        
-	        keySchema.setLastName(randGen.randomIdentifier());
+	        	        keySchema.setLastName(randGen.randomIdentifier());
 	        String randomPhoneNumber = randGen.randomPhone1() + "-" + randGen.randomPhone1() + "-" + randGen.randomPhone2();
 	        keySchema.setPhoneNumber(randomPhoneNumber);
 	        keySchema.setPhoneCompany(randGen.randomCompany());
