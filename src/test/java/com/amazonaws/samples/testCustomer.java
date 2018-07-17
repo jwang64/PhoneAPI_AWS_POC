@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.amazonaws.samples.Customer.Customer;
+
 public class testCustomer {
 
 	@Test
