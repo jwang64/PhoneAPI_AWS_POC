@@ -13,16 +13,22 @@ public class HomeController {
   return "index";
  }
  
- @RequestMapping("/test")
- public String test()
+ @RequestMapping("/addCustomer")
+ public String addCustomer()
  {
-	 return "test";
+	 return "addCustomer";
  }
  
- public Customer customerDetails()
+ @RequestMapping("/login")
+ public String login()
  {
-	 //temp, going to add the load DB for customer after getting some parameters
-	 Customer tempCustomer = new Customer();
-	 return tempCustomer;
+	 return "login";
  }
+ 
+ @RequestMapping("/port")
+ public String port()
+ {
+	 return "port";
+ }
+
 }

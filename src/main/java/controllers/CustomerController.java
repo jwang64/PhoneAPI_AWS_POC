@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.samples.*;
 
-@RequestMapping("/customer")
+@RequestMapping("/addCustomer")
 @RestController
 public class CustomerController {
-	public void createNewCustomer()
+	public String createNewCustomer()
 	{
-	
+		return "addCustomer";
 	}
 	/*
 	public Customer getCustomer()
