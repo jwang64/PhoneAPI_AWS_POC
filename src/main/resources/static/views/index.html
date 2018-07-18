@@ -7,19 +7,17 @@
 
 <body style="text-align: center;">
 	<h1>Login</h1>
-	<form action="#" th:action="@{/login}" th:object="${login}" method="post">
+	<form>
 		First Name:<br>
-		<input type="text" name="firstName" th:field="*{firstName}"><br>
+		<input type="text"> name="firstName"><br>
 		Last Name:<br>
-		<input type="text" name="lastName" th:field="*{lastName}"><br>
-		Phone Number:<br>
-		<input type="text" name=phoneNumber" th:field="*{phoneNumber}"><br>
+		<input type="text" name="lastName"><br>
 		<input type="submit" value="Submit"> <input type="reset" value="reset"/>
 	</form>
 	<h1>New Customer</h1>
 	<form>
 		First Name:<br>
-		<input type="text" name="firstName"><br>
+		<input type="text"> name="firstName"><br>
 		Last Name:<br>
 		<input type="text" name="lastName"><br>
 		Phone Number:<br>
@@ -37,7 +35,7 @@
 	<h1>Port-In</h1>
 	<form>
 		First Name:<br>
-		<input type="text" name="firstName"><br>
+		<input type="text"> name="firstName"><br>
 		Last Name:<br>
 		<input type="text" name="lastName"><br>
 		Phone Number:<br>

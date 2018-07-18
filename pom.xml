@@ -71,6 +71,22 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+		<groupId>org.apache.tomcat.embed</groupId>
+		<artifactId>tomcat-embed-jasper</artifactId>
+		<scope>required</scope>
+		</dependency>
+		
+		<dependency>
+	    <groupId>org.thymeleaf</groupId>
+	    <artifactId>thymeleaf</artifactId>
+	    <version>2.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.thymeleaf</groupId>
+		    <artifactId>thymeleaf-spring4</artifactId>
+		    <version>2.1.4.RELEASE</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
