@@ -2,7 +2,7 @@ package com.amazonaws.samples.Database;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.samples.Random;
-import com.amazonaws.samples.Customer.Customer;
+import com.amazonaws.samples.model.Customer;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;

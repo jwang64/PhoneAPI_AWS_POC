@@ -1,4 +1,4 @@
-package com.amazonaws.samples.Customer;
+package com.amazonaws.samples.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;

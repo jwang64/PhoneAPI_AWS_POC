@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.samples.Customer.Customer;
+import com.amazonaws.samples.model.Customer;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
