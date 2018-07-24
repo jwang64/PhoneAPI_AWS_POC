@@ -31,6 +31,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/jamwang/Downloads/java-json.jar"/>
+=======
+>>>>>>> 4a3e84d0d644683e8048a92f36b3af2f30a041e4
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

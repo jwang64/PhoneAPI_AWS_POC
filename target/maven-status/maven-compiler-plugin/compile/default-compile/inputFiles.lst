@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\model\Customer.java
 C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Database\PopulateDB.java
 C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Lambda\LambdaHandler.java
@@ -7,3 +8,15 @@ C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\com\ama
 C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Random.java
 C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Lambda\Request.java
 C:\Users\jamwang\eclipse-workspace\Action_Learning_Project\src\main\java\controllers\HomeController.java
+=======
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Database\PopulateDB.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Lambda\Response.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\model\Customer.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\schedule\scheduleEmail.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Application.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Lambda\LambdaHandler.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Lambda\Request.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Random.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\com\amazonaws\samples\Database\GenerateDB.java
+C:\Users\brsheu\eclipse-workspace\Action_Learning_Project\src\main\java\controllers\HomeController.java
+>>>>>>> 4a3e84d0d644683e8048a92f36b3af2f30a041e4
