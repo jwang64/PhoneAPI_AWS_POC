@@ -30,20 +30,13 @@ public class Email implements RequestHandler<EmailRequest, EmailResponse>  {
 		  // configuration set, comment the following variable and the 
 		  // .withConfigurationSetName(CONFIGSET); argument below.
 		  //static final String CONFIGSET = "ConfigSet";
-		  
-		  //Link the lambdaHandler class to this class below
-		  LambdaHandler lambdaHandler = new LambdaHandler();
-		  String lastName = lambdaHandler.getLastName();
-		  String firstName = lambdaHandler.firstName;
-		  String phoneCompany = lambdaHandler.phoneCompany;
+	
 		  // The subject line for the email.
 		  final String SUBJECT = "Phone Company Change (AWS SDK)";
 		  
 		  // The HTML body for the email.
-		  final String HTMLBODY = "<h1>Porting Update</h1>"
-		      + "<p>Hello, customer %s %s has changed their phone company from %s to %s."
-		      + "Amazon SES</a> using the <a href='https://aws.amazon.com/sdk-for-java/'>" 
-		      + "AWS SDK for Java</a>";
+		  final String HTMLBODY = "<h1>Health Check</h1>"
+		      + "<p>Hello, system is still running.</p>";
 		  //String text = String.format(TEXTBODY, firstName, lastName, phoneCompany)
 		  
 		  // The email body for recipients with non-HTML email clients.
