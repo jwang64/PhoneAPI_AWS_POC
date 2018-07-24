@@ -1,7 +1,6 @@
 package com.amazonaws.samples.Lambda;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.amazonaws.samples.Application;
 import com.amazonaws.samples.model.Customer;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.serverless.exceptions.ContainerInitializationException;
