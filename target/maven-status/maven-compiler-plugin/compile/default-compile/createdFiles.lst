@@ -1,6 +1,5 @@
 controllers\HomeController.class
 com\amazonaws\samples\Database\PopulateDB.class
-controllers\CustomerController.class
 com\amazonaws\samples\Database\GenerateDB.class
 com\amazonaws\samples\Lambda\Response.class
 com\amazonaws\samples\Application.class

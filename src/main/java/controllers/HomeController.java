@@ -59,7 +59,7 @@ public class HomeController {
 		 , @RequestParam("email") String email, @RequestParam("address") String address, @RequestParam("zipCode") String zipCode
 		 , @RequestParam("phoneCompany") String phoneCompany)
  {
-
+	 
 	 Customer newCustomer = new Customer();
 	 newCustomer.setFirstName(firstName);
 	 newCustomer.setLastName(lastName);

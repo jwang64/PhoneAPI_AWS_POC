@@ -8,7 +8,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 /*
  * Customer class. Holds information about the customer: name, phone number, company, account number, zipcode, ssn, email
  */
-@DynamoDBTable(tableName="TestTable")
+@DynamoDBTable(tableName="TestTable2")
 public class Customer {
 	private String phoneCompany;
 	private String phoneNumber;
@@ -20,14 +20,13 @@ public class Customer {
 	private String SSN;
 	private String email;
 	
-	
-	@DynamoDBHashKey(attributeName="LastName")
-	public String getLastName() { return lastName; }
-	public void setLastName(String lastName) { this.lastName = lastName; }
-	
-	@DynamoDBRangeKey(attributeName="PhoneNumber")
+	@DynamoDBHashKey(attributeName="PhoneNumber")
 	public String getPhoneNumber() { return phoneNumber; }
 	public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+	
+	@DynamoDBAttribute(attributeName="LastName")
+	public String getLastName() { return lastName; }
+	public void setLastName(String lastName) { this.lastName = lastName; }
 
 	@DynamoDBAttribute(attributeName="PhoneCompany")
 	public String getPhoneCompany() { return phoneCompany; }
@@ -56,4 +55,10 @@ public class Customer {
 	@DynamoDBAttribute(attributeName="Email")
 	public String getEmail() { return email; }
 	public void setEmail(String email) { this.email = email; }
+	
+	@Override
+	public String toString()
+	{
+		return "";
+	}
 }
