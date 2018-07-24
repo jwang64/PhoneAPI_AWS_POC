@@ -17,7 +17,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
     public Response handleRequest(Request input, Context context) {
     	// Connects with AWS
     	AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
+		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-1.amazonaws.com", "us-east-1"))	
 				.build();  
 
 	    DynamoDBMapper mapper = new DynamoDBMapper(client);

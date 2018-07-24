@@ -45,6 +45,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
     	if(!phoneCompany.equals(temp.getPhoneCompany()))
     	{
     		output += " Your old company was :" + temp.getPhoneCompany();
+    		String oldCompany = temp.getPhoneCompany();
     		temp.setPhoneCompany(phoneCompany);
     		mapper.save(temp);
     		output += " Your new phone company is : " + temp.getPhoneCompany();
@@ -63,11 +64,11 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 		  
 		  // The HTML body for the email.
 		  final String HTMLBODY = "<h1>Porting Update</h1>"
-		      + "<p>Hello, customer %s %s has changed their phone company from %s to %s."
+		      + String.format("<p>Hello, customer %s %s has changed their phone company from %s to %s.", temp.getFirstName(), temp.getLastName(), oldCompany, temp.getPhoneCompany())
 		      + "Amazon SES</a> using the <a href='https://aws.amazon.com/sdk-for-java/'>" 
 		      + "AWS SDK for Java</a>";
-		  String text = String.format(HTMLBODY, temp.getFirstName(), temp.getLastName(), temp.getPhoneCompany());
-		  final String TEXTBODY = "Hello, customer %s %s has changed their phone company from %s to %s blank";
+		  //String text = String.format(HTMLBODY, temp.getFirstName(), temp.getLastName(), temp.getPhoneCompany());
+		  final String TEXTBODY = "Hello, customer S S has changed their phone company from S to S blank";
 		  
 		  try {
 		      AmazonSimpleEmailService client1 = 
@@ -81,7 +82,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 		          .withMessage(new Message()
 		              .withBody(new Body()
 		                  .withHtml(new Content()
-		                      .withCharset("UTF-8").withData(text))
+		                      .withCharset("UTF-8").withData(HTMLBODY))
 		                  .withText(new Content()
 		                      .withCharset("UTF-8").withData(TEXTBODY)))
 		              .withSubject(new Content()
@@ -96,7 +97,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 		      System.out.println("The email was not sent. Error message: " 
 		          + ex.getMessage());
     	}
-    	}
+    	} 
     	else
     	{
     		output += " Your current phone company is still : " + temp.getPhoneCompany();
