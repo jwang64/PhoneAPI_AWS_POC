@@ -50,16 +50,9 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
     		mapper.save(temp);
     		output += " Your new phone company is : " + temp.getPhoneCompany();
     	  
-    		//BEGIN EMAIL CREDENTIALS	
-    	  // Replace sender@example.com with your "From" address.
-  		  // This address must be verified with Amazon SES.
+    		
   		  final String FROM = "james.wang@capgemini.com";
-
-  		  // Replace recipient@example.com with a "To" address. If your account
-  		  // is still in the sandbox, this address must be verified.
   		  final String TO = "brandon.sheu@capgemini.com";
-
-  		// The subject line for the email.
 		  final String SUBJECT = "Phone Company Change (AWS SDK)";
 		  
 		  // The HTML body for the email.
@@ -67,30 +60,27 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 		      + String.format("<p>Hello, customer %s %s has changed their phone company from %s to %s.", temp.getFirstName(), temp.getLastName(), oldCompany, temp.getPhoneCompany())
 		      + "Amazon SES</a> using the <a href='https://aws.amazon.com/sdk-for-java/'>" 
 		      + "AWS SDK for Java</a>";
-		  //String text = String.format(HTMLBODY, temp.getFirstName(), temp.getLastName(), temp.getPhoneCompany());
+		  
+		  // Text Body for email 
 		  final String TEXTBODY = "Hello, customer S S has changed their phone company from S to S blank";
 		  
 		  try {
 		      AmazonSimpleEmailService client1 = 
 		          AmazonSimpleEmailServiceClientBuilder.standard()
-		          // Replace US_WEST_2 with the AWS Region you're using for
-		          // Amazon SES.
+		          // Pick region US_EAST_1 for SES
 		            .withRegion(Regions.US_EAST_1).build();
 		      SendEmailRequest request = new SendEmailRequest()
 		          .withDestination(
 		              new Destination().withToAddresses(TO))
 		          .withMessage(new Message()
 		              .withBody(new Body()
-		                  .withHtml(new Content()
+		                  .withHtml(new Content()// HTMLBODY defined earlier
 		                      .withCharset("UTF-8").withData(HTMLBODY))
 		                  .withText(new Content()
 		                      .withCharset("UTF-8").withData(TEXTBODY)))
 		              .withSubject(new Content()
 		                  .withCharset("UTF-8").withData(SUBJECT)))
-		          .withSource(FROM);
-		          // Comment or remove the next line if you are not using a
-		          // configuration set
-		          //.withConfigurationSetName(CONFIGSET);
+		          .withSource(FROM); // Email sender
 		      client1.sendEmail(request);
 		      System.out.println("Email sent!");
 		    } catch (Exception ex) {

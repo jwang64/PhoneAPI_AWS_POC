@@ -17,36 +17,21 @@ public class Email implements RequestHandler<EmailRequest, EmailResponse>  {
 	@Override
 	public EmailResponse handleRequest(EmailRequest input, Context context) {
 		
-		// public String scheduleEmail; 
-		  // Replace sender@example.com with your "From" address.
-		  // This address must be verified with Amazon SES.
 		  final String FROM = "james.wang@capgemini.com";
-
-		  // Replace recipient@example.com with a "To" address. If your account
-		  // is still in the sandbox, this address must be verified.
 		  final String TO = "brandon.sheu@capgemini.com";
-
-		  // The configuration set to use for this email. If you do not want to use a
-		  // configuration set, comment the following variable and the 
-		  // .withConfigurationSetName(CONFIGSET); argument below.
-		  //static final String CONFIGSET = "ConfigSet";
-	
-		  // The subject line for the email.
+		  
 		  final String SUBJECT = "Phone Company Change (AWS SDK)";
 		  
 		  // The HTML body for the email.
 		  final String HTMLBODY = "<h1>Health Check</h1>"
 		      + "<p>Hello, system is still running.</p>";
-		  //String text = String.format(TEXTBODY, firstName, lastName, phoneCompany)
-		  
 		  // The email body for recipients with non-HTML email clients.
 		  final String TEXTBODY = "Hello, customer %s %s has changed their phone company from %s to %s blank";
 		  
 		    try {
 		      AmazonSimpleEmailService client = 
 		          AmazonSimpleEmailServiceClientBuilder.standard()
-		          // Replace US_WEST_2 with the AWS Region you're using for
-		          // Amazon SES.
+		          // Select region US_EAST_1 for SES
 		            .withRegion(Regions.US_EAST_1).build();
 		      SendEmailRequest request = new SendEmailRequest()
 		          .withDestination(
