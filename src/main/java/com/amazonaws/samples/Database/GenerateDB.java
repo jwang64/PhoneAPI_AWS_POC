@@ -13,7 +13,7 @@ public class GenerateDB {
 	{
 		//Initial setup for the database. Connects with AWS and sends a table creation request
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
+		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-1.amazonaws.com", "us-east-1"))	
 				.build(); 
 		 DynamoDBMapper mapper = new DynamoDBMapper(client);
 		 

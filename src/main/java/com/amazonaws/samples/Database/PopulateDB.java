@@ -39,7 +39,7 @@ public class PopulateDB {
 	public static void main(String args[]) {
 		//Connects w/ DynamoDB and then saves the generated data into the database
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))	
+		 		.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-1.amazonaws.com", "us-east-1"))	
 				.build(); 
 		 DynamoDBMapper mapper = new DynamoDBMapper(client);
 			for (int n = 0; n <= 999; n++) 
