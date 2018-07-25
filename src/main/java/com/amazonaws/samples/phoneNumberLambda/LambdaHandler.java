@@ -26,7 +26,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 		//Checks the last name and phone number to see whether customer exists in the current system
 		Customer temp = mapper.load(Customer.class, phoneNumber);
 		//Response being sent to user
-    	String output = "Your phone number is : " + temp.getPhoneNumber() + "\nYour phone company is" + temp.getPhoneCompany();
+    	String output = "Your phone number is : " + temp.getPhoneNumber() + "Your phone company is " + temp.getPhoneCompany();
   			  Response a = new Response(output);
         // TODO: implement your handler
   	  return a;

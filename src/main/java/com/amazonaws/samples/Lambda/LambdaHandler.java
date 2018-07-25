@@ -1,3 +1,5 @@
+// This class handles the porting functionality only
+
 package com.amazonaws.samples.Lambda;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -51,7 +53,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
     		output += " Your new phone company is : " + temp.getPhoneCompany();
     	  
     		
-  		  final String FROM = "james.wang@capgemini.com";
+  		  /*final String FROM = "james.wang@capgemini.com";
   		  final String TO = "brandon.sheu@capgemini.com";
 		  final String SUBJECT = "Phone Company Change (AWS SDK)";
 		  
@@ -86,7 +88,7 @@ public class LambdaHandler implements RequestHandler<Request, Response> {
 		    } catch (Exception ex) {
 		      System.out.println("The email was not sent. Error message: " 
 		          + ex.getMessage());
-    	}
+    	} */
     	} 
     	else
     	{

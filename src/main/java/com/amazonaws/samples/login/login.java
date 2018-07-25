@@ -24,20 +24,23 @@ public class login {
 
         DynamoDB dynamoDB = new DynamoDB(client);
 
-        Table table = dynamoDB.getTable("TestTable2");
-
-        ScanSpec scanSpec = new ScanSpec().withProjectionExpression("phoneCompany, phoneNumber")
+        Table table = dynamoDB.getTable("PhoneCustomer");
+        String variable = "AT&T";
+     /*   ScanSpec scanSpec = new ScanSpec().withProjectionExpression("phoneCompany, phoneNumber")
             .withFilterExpression("phoneCompany = :v_phoneCompany")
             .withValueMap(new ValueMap().withString(":v_phoneCompany", "AT&T"));
-
+ */
+        ScanSpec scanSpec = new ScanSpec().withProjectionExpression("PhoneCompany, PhoneNumber, FirstName, LastName")
+        		.withFilterExpression("PhoneCompany = :v_phoneCompany")
+        		.withValueMap(new ValueMap().withString(":v_phoneCompany", variable));
         try {
             ItemCollection<ScanOutcome> items = table.scan(scanSpec);
+            
             Iterator<Item> iter = items.iterator();
-            System.out.println("hello");
+            
             while (iter.hasNext()) {
                 Item item = iter.next();
                 System.out.println(item);
-                System.out.println("I'm doing something");
             }
 
         }

@@ -8,7 +8,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 /*
  * Customer class. Holds information about the customer: name, phone number, company, account number, zipcode, ssn, email
  */
-@DynamoDBTable(tableName="TestTable2")
+@DynamoDBTable(tableName="PhoneCustomers")
 public class Customer {
 	private String phoneCompany;
 	private String phoneNumber;
